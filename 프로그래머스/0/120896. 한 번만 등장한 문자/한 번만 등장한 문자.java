@@ -1,15 +1,15 @@
-import java.util.Set;
-import java.util.TreeSet;
 import java.util.Arrays;
 
 class Solution {
     public String solution(String s) {
-        StringBuilder answer = new StringBuilder();
-        Set<String> sSet = new TreeSet<>(Arrays.asList(s.split("")));
+        String[] letters = s.split("");
+        Arrays.sort(letters);
+        s = String.join("",letters);
         
-        for (String letter : sSet) {
-            if(s.indexOf(letter) == s.lastIndexOf(letter)) {
-                answer.append(letter);            
+        StringBuilder answer = new StringBuilder();
+        for(int i = 0; i < s.length(); i++) {
+            if(s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i))) {
+                answer.append(s.charAt(i));
             }
         }
         
