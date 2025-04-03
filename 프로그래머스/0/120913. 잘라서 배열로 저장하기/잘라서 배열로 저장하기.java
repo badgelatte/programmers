@@ -4,10 +4,10 @@ class Solution {
         
         String[] answer = new String[answerLen];
         
-        for(int i = 0; i < answer.length -1; i++) {
-            answer[i] = my_str.substring(i*n, i*n+n);
+        for(int i = 0; i < answerLen - 1; i++) {
+            answer[i] = my_str.substring(i * n, i * n + n);
         }
-        answer[answer.length-1] = my_str.substring((answer.length-1) * n);
+        answer[answerLen - 1] = my_str.substring((answerLen - 1) * n);
         
         return answer;
     }
