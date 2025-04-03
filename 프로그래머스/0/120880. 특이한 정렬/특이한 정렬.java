@@ -2,13 +2,24 @@ import java.util.Arrays;
 
 class Solution {
     public int[] solution(int[] numlist, int n) {
-        int[] answer = new int[numlist.length];
         
+        sortByDistance(numlist, n);
+        
+        return adjustAndSort(numlist, n);
+    }
+    
+    public int[] sortByDistance(int[] numlist, int n) {
         for(int i = 0; i < numlist.length; i++) {
             numlist[i] -= n;
         }
         
         Arrays.sort(numlist);
+        
+        return numlist;
+    }
+    
+    public int[] adjustAndSort (int[] numlist, int n) {
+        int[] answer = new int[numlist.length];
         
         if(numlist[0] >= 0) {
             for(int i = 0; i < numlist.length; i++) {
@@ -46,7 +57,6 @@ class Solution {
                 answer[i] = numlist[after++] + n;
             }
         }
-        
         return answer;
     }
 }
