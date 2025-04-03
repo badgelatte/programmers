@@ -1,19 +1,19 @@
 class Solution {
     public int[] solution(int[] numbers, String direction) {
-        int length = numbers.length;
+        int numbers_last = numbers.length - 1;
         
         if(direction.equals("left")) {
             int corner = numbers[0];
-            for(int i = 0; i < length-1; i++) {
+            for(int i = 0; i < numbers_last; i++) {
                 numbers[i] = numbers[i+1];
             }
-            numbers[length-1] = corner;
+            numbers[numbers_last] = corner;
         }
         
         if(direction.equals("right")) {
-            int corner = numbers[length-1];
-            for(int i = 0; i < length-1; i++) {
-                numbers[length-1-i] =numbers[length-2-i];
+            int corner = numbers[numbers_last];
+            for(int i = numbers_last; i > 0; i--) {
+                numbers[i] =numbers[i-1];
             }
             numbers[0] = corner;
         }
