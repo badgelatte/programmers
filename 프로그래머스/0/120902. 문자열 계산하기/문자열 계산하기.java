@@ -12,6 +12,7 @@ class Solution {
                 answer -= Integer.parseInt(strings[i+1]);
             }
         }
+        
         return answer;
     }
 }
