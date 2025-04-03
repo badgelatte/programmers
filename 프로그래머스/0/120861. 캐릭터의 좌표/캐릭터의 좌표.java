@@ -25,7 +25,7 @@ class Solution {
         if(key.equals("right") && (location[0] != board[0] / 2)) {
             location[0]++;
         }
-        
+
         return location;
     }
 }
