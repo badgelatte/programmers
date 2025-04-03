@@ -16,10 +16,8 @@ class Solution {
             return true;
         }
         
-        if(n > 100) {
-            if((n / 10) % 10 == 3) {
-                return true;
-            }
+        if(n > 100 && ((n / 10) % 10 == 3 || n / 100 == 3)) {
+            return true;
         }
         
         return n % 3 == 0;
