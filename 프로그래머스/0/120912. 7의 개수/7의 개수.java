@@ -10,6 +10,7 @@ class Solution {
                 num /= 10;
             }
         }
+        
         return count;
     }
 }
