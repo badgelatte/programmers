@@ -5,11 +5,11 @@ class Solution {
         }
         
         String[] ALetters = A.split("");
-        int count = A.length();
+        int count = 0;
         
-        while(count-- > 0) {
+        while(count++ < A.length()) {
             if(B.equals(moveRight(ALetters))) {
-                return A.length() - count;
+                return count;
             }
         }
         
