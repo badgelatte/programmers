@@ -9,6 +9,7 @@ class Solution {
             for(int i = s;i < s+l;i++) {
                 str += intStr.charAt(i);
             }
+            
             int num = strToInt(str);
             if(num > k) {
                 list.add(num);
