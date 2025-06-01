@@ -16,7 +16,7 @@ class Solution {
 
         if(start != -1) {
             if(end == -1) {
-                return new int[]{arr[start]};
+                return arrSub(arr, start, start);
                 
             }
             return arrSub(arr, start, end);
