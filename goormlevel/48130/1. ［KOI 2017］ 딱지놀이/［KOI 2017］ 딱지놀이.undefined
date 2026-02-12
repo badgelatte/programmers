@@ -23,39 +23,3 @@ class Main {
 	public static int[] makeArr(String str) {
 		char[] charArr = str.toCharArray();
     int length = charArr.length;
-    int[] arr = new int[length];
-
-    Arrays.sort(charArr);
-
-    for(int i = 0; i < length; i++) {
-      arr[i] = charArr[length - i - 1] - 49;
-    }
-
-    return arr;
-	}
-
-	public static String compareArrs(int[] arr1, int[] arr2) {
-		int arr1Len = arr1.length;
-		int arr2Len = arr2.length;
-		int minLen = Math.min(arr1Len, arr2Len);
-
-		for (int i = 0; i < minLen; i++) {
-			if (arr1[i] > arr2[i]) {
-				return "A";
-			}
-			else if (arr1[i] < arr2[i]) {
-				return "B";
-			}
-		}
-		
-		if (arr1Len > minLen && arr2Len == minLen) {
-			return "A";
-		}
-		if (arr1Len == minLen && arr2Len > minLen) {
-			return "B";
-		}
-		
-		return "D";
-	}
-}
-
