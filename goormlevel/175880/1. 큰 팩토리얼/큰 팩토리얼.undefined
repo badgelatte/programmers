@@ -1,0 +1,28 @@
+import java.io.*;
+import java.math.BigInteger;
+import java.util.List;
+import java.util.ArrayList;
+
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String input = br.readLine();
+		BigInteger num = new BigInteger(input);
+		num = factorial(num);
+		System.out.println(num.remainder(BigInteger.valueOf(1000000007)));
+	}
+
+	public static BigInteger factorial(BigInteger num) {
+		BigInteger result = BigInteger.ONE;
+		
+		for(int i = 1;;i++) {
+			result = result.multiply(BigInteger.valueOf(i));
+			
+			if(num.equals(BigInteger.valueOf(i))) {
+				break;
+			}
+		}
+
+		return result;
+	}
+}
