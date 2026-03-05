@@ -5,24 +5,23 @@ class Solution {
         int length = 0;
         
         // wid + len
-        int plusNums = 0;
+        int plusLens = 0;
         // wid * len
-        int mulNums = 0;
+        int mulLens = 0;
         
-        plusNums = (brown + 4) / 2;
-        mulNums = yellow - 4 + 2 * plusNums;
+        plusLens = (brown + 4) / 2;
+        mulLens = yellow - 4 + 2 * plusLens;
         
-        int rootM = Math.abs(mulNums);
-        int num = 1;
+        int num1 = 1;
+        int num2 = plusLens - num1;
         
-        for (int i = 1; i < rootM; i++) {
-            if (mulNums % i == 0 && i + (mulNums/i) == plusNums) {
-                num = i;
-            }
+        while(num2 > 0 && num1 * num2 != mulLens) {
+            num1++;
+            num2--;
         }
         
-        answer[0] = Math.max(num, mulNums/num);
-        answer[1] = Math.min(num, mulNums/num);
+        answer[0] = num2;
+        answer[1] = num1;
         
         return answer;
     }
